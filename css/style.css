@@ -1,0 +1,140 @@
+
+/* Import om het font later te kunnen gebruiken */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+
+/* Zorgt dat de containers er goed uit zien */
+.container {
+    margin: 10px;
+    height:fit-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hier worden de meeste dingen van de tekst aangepast */
+.data {
+    color:rgb(78, 82, 94);
+    font-size: 1.5em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    background-color:rgba(255, 250, 240, 0.521);
+    border-radius: 25px;
+    padding-top: 20px;
+}
+
+/* Zorgt voor de grid-area */
+.klok{
+    grid-area: tijd;
+}
+
+/* Zorgt voor de grid-area */
+.bericht{
+    grid-area: mes;
+}
+
+/* Zorgt voor de grid-area */
+.lijst{
+    grid-area: todo;
+}
+
+/* Zorgt voor de grid-area */
+.heade{
+    grid-area: header;
+    text-align: center;
+}
+
+/* Laat de tekst in de boxen goed staan  */
+.klok, .bericht, .lijst, .heade{
+    margin-left: auto; 
+    margin-right: auto;
+    width: 80%;
+}
+
+/* Zorgt dat het logo niet te groot of klein wordt */
+.logo{
+    width: 50%;
+}
+
+/* Classes die er voor zorgen dat met javascript de achtergrond goed komt te staan */
+.BgMorning{
+    background-image: url(../images/Bkground1.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.BgDay{
+    background-image: url(../images/Bkground3.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.BgEvening{
+    background-image: url(../images/Bkground2.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.BgNight{
+    background-image: url(../images/Bkground4.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Mobile */
+@media only screen and (min-width: 0px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "header"
+            "tijd"
+            "mes"
+            "todo"
+        ;
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px){
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "header header header header"
+            "tijd tijd tijd tijd"
+            "mes mes todo todo"
+        ;
+    }
+
+    .bericht,.lijst{
+        width: 60%;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px){
+    .klok,.bericht,.lijst,.heade{
+        color: darkslategrey;
+    }
+}
